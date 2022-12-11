@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MandebrotTest1
+﻿namespace MandebrotTest1
 {
     internal class Complex
     {
@@ -19,7 +13,7 @@ namespace MandebrotTest1
 
         public void Square()
         {
-            double temp = (a * a) - (a * b); //Different combination = different mandelbrot shown
+            double temp = (a * a) - (b * b); //Different combination = different mandelbrot shown
             b = 2.0 * a * b;
             a = temp;
         }

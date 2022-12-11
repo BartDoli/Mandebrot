@@ -1,8 +1,10 @@
 namespace MandebrotTest1
 {
-    public partial class Form1 : Form
+    public partial class Mandelbrot : Form
     {
-        public Form1()
+        int scaleFactor = 1000;
+
+        public Mandelbrot()
         {
             InitializeComponent();
         }
@@ -25,13 +27,25 @@ namespace MandebrotTest1
                         it++;
                         z.Square();
                         z.Add(c);
-                        if (z.Magnitude() > 2.0) break;
+                        if (z.Magnitude() > 10.0) break;
                     }
-                    while (it < 100);
-                    bitmap.SetPixel(x, y, it < 100 ? Color.Black : Color.White);
+                    while (it < 1800);
+                    bitmap.SetPixel(x, y, it < 1800 ? Color.Black : Color.White);
                 }
             }
             pictureBox1.Image = bitmap;
+        }
+
+        private void ZoomInButton_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Height += scaleFactor;
+            pictureBox1.Width += scaleFactor;
+        }
+
+        private void ZoomOutButton_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Height -= scaleFactor;
+            pictureBox1.Width -= scaleFactor;
         }
     }
 }
