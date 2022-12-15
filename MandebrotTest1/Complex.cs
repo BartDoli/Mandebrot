@@ -13,7 +13,7 @@
 
         public void Square()
         {
-            double temp = (a * a) - (b * b); //Different combination = different mandelbrot shown
+            double temp = (a * a) - (b * b);
             b = 2.0 * a * b;
             a = temp;
         }

@@ -27,10 +27,10 @@ namespace MandebrotTest1
                         it++;
                         z.Square();
                         z.Add(c);
-                        if (z.Magnitude() > 10.0) break;
+                        if (z.Magnitude() > 20.0) break;
                     }
-                    while (it < 1800);
-                    bitmap.SetPixel(x, y, it < 1800 ? Color.Black : Color.White);
+                    while (it < 2100);
+                    bitmap.SetPixel(x, y, it < 2100 ? Color.Black: Color.White);
                 }
             }
             pictureBox1.Image = bitmap;
